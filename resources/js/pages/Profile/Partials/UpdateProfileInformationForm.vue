@@ -26,6 +26,7 @@
                     required
                     autofocus
                     autocomplete="name"
+                    placeholder="Enter your full name"
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
@@ -41,6 +42,7 @@
                     v-model="form.email"
                     required
                     autocomplete="username"
+                    placeholder="Enter your email address"
                 />
 
                 <InputError class="mt-2" :message="form.errors.email" />
@@ -110,12 +112,5 @@ const user = usePage().props.auth.user;
 const form = useForm({
     name: user.name,
     email: user.email,
-    jira_token: user.jira_token || '',
-    jira_domain: user.jira_domain || '',
-    jira_connected_email: user.jira_connected_email || '',
-    jira_in_progress_status: user.jira_in_progress_status || 'In Progress',
-    jira_review_status: user.jira_review_status || 'Review',
 });
-
-const hasJiraToken = computed(() => !!user.jira_token);
 </script>

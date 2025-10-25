@@ -7,15 +7,12 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory;
     use Notifiable;
-    use InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -26,10 +23,6 @@ class User extends Authenticatable implements HasMedia
         'name',
         'email',
         'password',
-        'jira_token',
-        'jira_domain',
-        'jira_connected_email',
-        'default_template_id',
     ];
 
     /**
@@ -40,7 +33,6 @@ class User extends Authenticatable implements HasMedia
     protected $hidden = [
         'password',
         'remember_token',
-        'github_access_token'
     ];
 
     /**
@@ -54,35 +46,5 @@ class User extends Authenticatable implements HasMedia
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function hasConfiguredJira(): bool
-    {
-        return $this->jira_token && $this->jira_domain && $this->jira_connected_email;
-    }
-
-    /**
-     * Get the templates for the user.
-     */
-    public function templates()
-    {
-        return $this->hasMany(Template::class);
-    }
-
-    /**
-     * Get the default template for the user.
-     */
-    public function defaultTemplate()
-    {
-        return $this->belongsTo(Template::class, 'default_template_id');
-    }
-
-    /**
-     * Register media collections for the user.
-     */
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('default');
-        $this->addMediaCollection('video_thumbnails');
     }
 }

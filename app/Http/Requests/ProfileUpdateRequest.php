@@ -25,9 +25,6 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
-            'jira_token' => ['nullable', 'string'],
-            'jira_domain' => ['nullable', 'string', 'regex:/^[a-zA-Z0-9-]+\.atlassian\.net$/'],
-            'jira_connected_email' => ['nullable', 'string', 'email', 'max:255'],
         ];
     }
 }

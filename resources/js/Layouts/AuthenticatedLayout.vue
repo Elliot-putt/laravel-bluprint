@@ -1,51 +1,28 @@
 <template>
     <div>
-        <div class="min-h-screen bg-black text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-black z-0"></div>
-            <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080')] opacity-10 mix-blend-overlay"></div>
-            <nav class="sticky top-0 z-50 w-full border-b border-zinc-800 bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60">
+        <div class="min-h-screen bg-gray-50">
+            <nav class="bg-white shadow-sm border-b border-gray-200">
                 <!-- Primary Navigation Menu -->
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex h-16 justify-between">
-                        <div class="flex">
+                        <div class="flex items-center">
                             <!-- Logo -->
                             <div class="flex shrink-0 items-center">
                                 <Link :href="'/'">
-                                    <span class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-                                      letsmerge.it
+                                    <span class="text-xl font-bold text-black">
+                                        Laravel Blueprint
                                     </span>
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-8 sm:flex">
                                 <NavLink
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
-                                    class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                                    class="text-sm font-medium text-gray-600 hover:text-black transition-colors"
                                 >
                                     Dashboard
-                                </NavLink>
-                                <NavLink
-                                    :href="route('templates.index')"
-                                    :active="route().current('templates.index')"
-                                    class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                                >
-                                    Templates
-                                </NavLink>
-                                <NavLink
-                                    :href="route('pull-requests.index')"
-                                    :active="route().current('pull-requests.index')"
-                                    class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                                >
-                                    Pull Requests
-                                </NavLink>
-                                <NavLink
-                                    :href="route('standup.index')"
-                                    :active="route().current('standup.index')"
-                                    class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                                >
-                                    Standup
                                 </NavLink>
                             </div>
                         </div>
@@ -58,7 +35,7 @@
                                         <span class="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                class="inline-flex items-center rounded-md border border-zinc-700 bg-black px-3 py-2 text-sm font-medium leading-4 text-zinc-400 transition duration-150 ease-in-out hover:text-white focus:outline-none"
+                                                class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 transition duration-150 ease-in-out hover:text-black focus:outline-none"
                                             >
                                                 {{ $page.props.auth.user.name }}
 
@@ -79,10 +56,10 @@
                                     </template>
 
                                     <template #content>
-                                        <div class="bg-zinc-800 border border-zinc-700 rounded-md shadow-lg py-1">
+                                        <div class="bg-white border border-gray-200 rounded-md shadow-lg py-1">
                                             <DropdownLink
                                                 :href="route('profile.edit')"
-                                                class="block px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-zinc-700"
+                                                class="block px-4 py-2 text-sm text-gray-700 hover:text-black hover:bg-gray-50"
                                             >
                                                 Profile
                                             </DropdownLink>
@@ -90,7 +67,7 @@
                                                 :href="route('logout')"
                                                 method="post"
                                                 as="button"
-                                                class="block w-full text-left px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-zinc-700"
+                                                class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:text-black hover:bg-gray-50"
                                             >
                                                 Log Out
                                             </DropdownLink>
@@ -107,7 +84,7 @@
                                     showingNavigationDropdown =
                                         !showingNavigationDropdown
                                 "
-                                class="inline-flex items-center justify-center rounded-md p-2 text-zinc-400 transition duration-150 ease-in-out hover:bg-zinc-800 hover:text-white focus:bg-zinc-800 focus:text-white focus:outline-none"
+                                class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
                             >
                                 <svg
                                     class="h-6 w-6"
@@ -155,30 +132,23 @@
                         <ResponsiveNavLink
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
-                            class="block py-2 px-4 text-base font-medium text-zinc-400 hover:text-white hover:bg-zinc-800"
+                            class="block py-2 px-4 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-50"
                         >
                             Dashboard
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            :href="route('templates.index')"
-                            :active="route().current('templates.index')"
-                            class="block py-2 px-4 text-base font-medium text-zinc-400 hover:text-white hover:bg-zinc-800"
-                        >
-                            Templates
                         </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
                     <div
-                        class="border-t border-zinc-800 pb-1 pt-4"
+                        class="border-t border-gray-200 pb-1 pt-4"
                     >
                         <div class="px-4">
                             <div
-                                class="text-base font-medium text-white"
+                                class="text-base font-medium text-black"
                             >
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div class="text-sm font-medium text-zinc-400">
+                            <div class="text-sm font-medium text-gray-600">
                                 {{ $page.props.auth.user.email }}
                             </div>
                         </div>
@@ -186,7 +156,7 @@
                         <div class="mt-3 space-y-1">
                             <ResponsiveNavLink
                                 :href="route('profile.edit')"
-                                class="block py-2 px-4 text-base font-medium text-zinc-400 hover:text-white hover:bg-zinc-800"
+                                class="block py-2 px-4 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-50"
                             >
                                 Profile
                             </ResponsiveNavLink>
@@ -194,7 +164,7 @@
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
-                                class="block w-full text-left py-2 px-4 text-base font-medium text-zinc-400 hover:text-white hover:bg-zinc-800"
+                                class="block w-full text-left py-2 px-4 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-50"
                             >
                                 Log Out
                             </ResponsiveNavLink>
@@ -205,7 +175,7 @@
 
             <!-- Page Heading -->
             <header
-                class="bg-zinc-900/70 border-b border-zinc-800 shadow-md backdrop-blur-sm relative z-10"
+                class="bg-white shadow-sm border-b border-gray-200"
                 v-if="$slots.header"
             >
                 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -214,7 +184,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="relative z-10">
+            <main class="bg-gray-50">
                 <slot />
             </main>
         </div>

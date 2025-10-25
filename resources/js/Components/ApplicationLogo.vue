@@ -1,8 +1,7 @@
 <template>
-    <img
-        :src=""
-        alt="App Logo"
-        />
+    <div class="text-xl font-bold text-black">
+        Laravel Blueprint
+    </div>
 </template>
 
 <script setup>

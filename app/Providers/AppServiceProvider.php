@@ -27,9 +27,5 @@ class AppServiceProvider extends ServiceProvider
 
         Model::shouldBeStrict(false);
         Model::unguard();
-
-        Event::listen(function (SocialiteWasCalled $event) {
-            $event->extendSocialite('github', \SocialiteProviders\GitHub\Provider::class);
-        });
     }
 }

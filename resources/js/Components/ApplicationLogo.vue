@@ -1,10 +1,9 @@
 <template>
     <img
-        :src="gitmanager"
+        :src=""
         alt="App Logo"
         />
 </template>
 
 <script setup>
-import gitmanager from '../../../public/images/gitmanager-clear.png';
 </script>

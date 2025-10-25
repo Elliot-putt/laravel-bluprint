@@ -33,7 +33,6 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
-                'hasConfiguredJira' => $request->user() ? $request->user()->hasConfiguredJira() : false,
             ],
         ];
     }

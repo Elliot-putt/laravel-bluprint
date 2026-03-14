@@ -24,6 +24,7 @@ A clean Laravel + Vue 3 + Inertia.js starter template with authentication, moder
    ```bash
    composer install
    npm install
+   npm run setup:hooks
    ```
 
 3. **Generate app key**:

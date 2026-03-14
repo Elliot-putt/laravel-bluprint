@@ -203,3 +203,11 @@ After committing, tell the user:
 > | `public/images/og-image.png` | Social share image (1200×630) |
 >
 > Replace these with your own branded assets to complete the rebrand.
+
+Also remind the user to run the git hooks installer if they haven't already:
+
+```bash
+npm run setup:hooks
+```
+
+This configures the pre-push ESLint hook so linting failures are caught locally before CI.

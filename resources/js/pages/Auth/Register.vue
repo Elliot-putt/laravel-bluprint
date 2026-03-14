@@ -5,9 +5,11 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
 import { route } from 'ziggy-js';
 
 const page = usePage();
+const appName = computed(() => page.props.appName ?? 'Laravel Blueprint');
 
 const form = useForm({
     _token: page.props.csrf_token,
@@ -31,7 +33,7 @@ const submit = () => {
         <!-- Header with Logo -->
         <div class="mb-8 text-center">
             <span class="text-xl font-bold text-black">
-                Laravel Blueprint
+                {{ appName }}
             </span>
             <h2 class="mt-2 text-2xl font-semibold text-gray-900">Create Account</h2>
             <p class="text-sm text-gray-600">Sign up to get started</p>

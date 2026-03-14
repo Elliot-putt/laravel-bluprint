@@ -29,9 +29,5 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
 
-    })->withSchedule(function ($schedule) {
-        $schedule->command('standup:summary')
-            ->dailyAt('02:00')
-            ->timezone('UTC');
     })
     ->create();

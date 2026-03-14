@@ -1,0 +1,11 @@
+#!/bin/sh
+# Run ESLint before push to catch errors before CI does.
+echo "Running ESLint..."
+npm run lint
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "ESLint failed. Fix errors above before pushing."
+    echo "(Run 'npm run lint' to see/fix them, or 'git push --no-verify' to skip this check.)"
+    exit 1
+fi
+echo "ESLint passed."

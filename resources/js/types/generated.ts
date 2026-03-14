@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 declare namespace App.Data {
     export type BranchData = {
         name: string;

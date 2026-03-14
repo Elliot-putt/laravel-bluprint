@@ -50,6 +50,43 @@ A clean Laravel + Vue 3 + Inertia.js starter template with authentication, moder
 
 Visit `http://localhost:8000` - you're ready to go! 🎉
 
+## Customising This Blueprint (Rename & Rebrand)
+
+After cloning, use the prompt below with Claude Code (or any AI assistant) to rename the app and update all branding in one pass. Replace `<YOUR APP NAME>` with your chosen name before running.
+
+### AI Customisation Prompt
+
+Copy and paste this prompt into Claude Code:
+
+````
+I have just cloned the Laravel Blueprint starter template. I want to rename it to "<YOUR APP NAME>".
+
+Please update the following to replace "Laravel Blueprint" with "<YOUR APP NAME>":
+
+1. `.env` — set `APP_NAME="<YOUR APP NAME>"`
+
+2. `resources/views/app.blade.php` — update the `config('app.name', 'Laravel Blueprint')` fallback in all meta tags
+
+3. `resources/js/pages/Welcome.vue`, `resources/js/pages/Auth/Login.vue`, `resources/js/pages/Auth/Register.vue`, `resources/js/pages/Auth/ResetPassword.vue` — the `appName` computed fallback string
+
+Also remind me to manually replace these binary assets with my own branding:
+- `public/favicon.ico`
+- `public/favicon.svg`
+- `public/apple-touch-icon.png`
+- `public/images/og-image.png` (1200×630 for social sharing)
+````
+
+### Manual Asset Checklist
+
+These binary files must be replaced manually with your own branding:
+
+| File | Size | Purpose |
+|------|------|---------|
+| `public/favicon.ico` | any | Browser tab icon |
+| `public/favicon.svg` | any | Scalable browser icon (currently a generic "B" placeholder) |
+| `public/apple-touch-icon.png` | 180×180 | iOS home screen icon |
+| `public/images/og-image.png` | 1200×630 | Social media share image |
+
 ## ✨ Features
 
 - ✅ **Laravel Breeze** authentication
